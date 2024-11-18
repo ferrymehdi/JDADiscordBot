@@ -24,7 +24,7 @@ public class Main {
                 .build();
         //
         shardManager.addEventListener(new SlashCommandsHandler(shardManager));
-        //
+        /////
         shardManager.addEventListener(new PrefixCommandsHandler());
     }
 }
