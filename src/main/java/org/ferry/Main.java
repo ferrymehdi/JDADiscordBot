@@ -10,6 +10,7 @@ import org.ferry.SlashCommands.SlashCommandsHandler;
 public class Main {
     static ShardManager shardManager;
     static Dotenv dotenv = Dotenv.load();
+
     public static void main(String[] args) {
         shardManager = DefaultShardManagerBuilder
                 .createDefault(dotenv.get("TOKEN"))
@@ -21,9 +22,9 @@ public class Main {
                         GatewayIntent.GUILD_MODERATION,
                         GatewayIntent.GUILD_MESSAGES)
                 .build();
+        //
         shardManager.addEventListener(new SlashCommandsHandler(shardManager));
+        //
         shardManager.addEventListener(new PrefixCommandsHandler());
-
-        
     }
 }
